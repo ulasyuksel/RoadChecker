@@ -22,7 +22,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(${RoadCheckerTest_SOURCE_DIR}/../CodeCoverage.cmake)
 append_coverage_compiler_flags()
 
-
 include_directories(${RoadCheckerTest_SOURCE_DIR}/../../GPSModule)
 include_directories(${RoadCheckerTest_SOURCE_DIR}/../../RoadChecker)
 include_directories(${RoadCheckerTest_SOURCE_DIR}/../../AcceleroMeter)
@@ -30,15 +29,14 @@ include_directories(${RoadCheckerTest_SOURCE_DIR}/../../SpeedUnit)
 include_directories(${RoadCheckerTest_SOURCE_DIR}/../../StateHandler)
 include_directories(${RoadCheckerTest_SOURCE_DIR}/../mocks/)
 
-include(FetchContent)
+# Set the path to Google Test source directory
+set(GTEST_SOURCE_DIR "${RoadCheckerTest_SOURCE_DIR}/../../3pp/googletest-release-1.11.0/")
 
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/refs/tags/release-1.11.0.zip
-)
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
+# Add Google Test to your project
+add_subdirectory(${GTEST_SOURCE_DIR} ${CMAKE_BINARY_DIR}/gtest)
+
+# Include directories for Google Test headers
+include_directories(${GTEST_SOURCE_DIR}/googletest/include)
 
 enable_testing()
 
@@ -67,6 +65,3 @@ target_link_libraries(
 
 include(GoogleTest)
 gtest_discover_tests(RoadCheckerTest)
-
-
-
