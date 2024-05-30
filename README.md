@@ -4,11 +4,13 @@ https://google.github.io/googletest/
 
 TO Build under unit/RoadChecker/ folder: 
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
-cd build
-make
+cmake --build build --config Debug
+
 
 To run:
-../bin/RoadCheckerTest
+./build/RoadCheckerTest
+or
+ctest --test-dir build
 
 for coverage:
 lcov -c -d /path/to/gcda_files -o coverage.info

@@ -5,7 +5,7 @@
 #make
 
 #to run test:
-#./bin/RoadCheckerTest
+#./RoadCheckerTest
 
 #for coverage
 #under folder run:
@@ -40,7 +40,7 @@ include_directories(${GTEST_SOURCE_DIR}/googletest/include)
 
 enable_testing()
 
-SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 file(GLOB all_SRCS 
 	"${RoadCheckerTest_SOURCE_DIR}/../mocks/MockAcceleroMeter.cc"
@@ -65,3 +65,5 @@ target_link_libraries(
 
 include(GoogleTest)
 gtest_discover_tests(RoadCheckerTest)
+
+add_test(NAME RoadCheckerTest COMMAND RoadCheckerTest)
