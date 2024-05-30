@@ -74,7 +74,14 @@ add_test(NAME ${CMAKE_PROJECT_NAME} COMMAND ${CMAKE_PROJECT_NAME})
 
 set(GCOVR_PATH "/usr/bin/gcovr")
 
-setup_target_for_coverage_gcovr_html(
+#etup_target_for_coverage_gcovr_html(
+#	NAME ${CMAKE_PROJECT_NAME}Coverage
+#	BASE_DIRECTORY "${CMAKE_SOURCE_DIR}/../../RoadChecker/" 
+#	EXECUTABLE ${CMAKE_PROJECT_NAME}
+#	DEPENDENCIES ${CMAKE_PROJECT_NAME}
+#)
+
+setup_target_for_coverage_lcov(
 	NAME ${CMAKE_PROJECT_NAME}Coverage
 	BASE_DIRECTORY "${CMAKE_SOURCE_DIR}/../../RoadChecker/" 
 	EXECUTABLE ${CMAKE_PROJECT_NAME}
