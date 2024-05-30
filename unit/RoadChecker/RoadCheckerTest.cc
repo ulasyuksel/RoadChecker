@@ -60,7 +60,6 @@ class RoadCheckerTest : public testing::Test {
   RoadChecker m_roadChecker{m_speedUnitMock, m_acceleroMeterStub, m_gpsModuleMock, m_stateHandlerMock};
 };
 
-
 TEST_F(RoadCheckerTest, ZeroSpeedRoadState)
 {
 	EXPECT_CALL(m_speedUnitMock,getSpeed()).Times(1).WillOnce(Return(0)) ;
@@ -76,7 +75,6 @@ TEST_F(RoadCheckerTest, ZeroSpeedRoadState)
    //std::cout << "AFTER FAIL DEMO" << std::endl;
 }
 
-
 TEST_F(RoadCheckerTest, OverLimitSpeedOverVerticalLimitRoadState)
 {
 	EXPECT_CALL(m_speedUnitMock,getSpeed()).Times(1).WillOnce(Return(valid_speed_to_check_value)) ;
@@ -90,7 +88,6 @@ TEST_F(RoadCheckerTest, OverLimitSpeedOverVerticalLimitRoadState)
    // Expect equality.
    EXPECT_EQ(m_roadChecker.getState(), ROAD_STATE_BROKEN);
 }
-
 
 TEST_F(RoadCheckerTest, OverLimitSpeedOverVerticalLimitRoadStateFirstSetStateFail)
 {

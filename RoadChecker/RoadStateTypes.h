@@ -21,6 +21,4 @@ typedef enum
 	ROAD_STATE_BROKEN = 1,
 } eRoadChecker_State_t;
 
-
-
 #endif /* ROADSTATETYPES_H_ */

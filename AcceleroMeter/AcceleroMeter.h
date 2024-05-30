@@ -17,8 +17,8 @@
 class AcceleroMeter {
 public:
 	AcceleroMeter();
-        virtual ~AcceleroMeter();
-        uint32_t getAcceleration(eAcceleroMeter_Direction_t direction) const;
+	virtual ~AcceleroMeter();
+	uint32_t getAcceleration(eAcceleroMeter_Direction_t direction) const;
 };
 
 #endif /* ACCELEROMETER_H_ */
