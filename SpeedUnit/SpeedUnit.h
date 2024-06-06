@@ -17,6 +17,14 @@ class SpeedUnit {
 public:
 	SpeedUnit();
 	virtual ~SpeedUnit();
+	
+	/**
+	 * @brief get current vehicle speed
+	 * 
+	 * @return returns positive speed in case of forward direction. 
+	 * negative speed in backward movement case.
+	 * 
+	*/
 	int32_t getSpeed() const;
 };
 
