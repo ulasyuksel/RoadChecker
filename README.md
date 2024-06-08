@@ -1,4 +1,4 @@
-This is the toy Unit Test project to demonstrate basic operations on a toy class called RoadChecker to TTTech-Auto members.
+This is the toy Unit Test project to demonstrate basic operations on a toy class called RoadChecker.
 for further information please refer to:
 https://google.github.io/googletest/
 
